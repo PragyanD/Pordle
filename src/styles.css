@@ -65,3 +65,21 @@ h1{
     }
     
 }
+#key-container{
+    width: 510px;
+    display:grid;
+    
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
+}
+#key-container button{
+    
+    width:43px;
+    height:58px;
+    border-radius: 4px;
+    border:none;
+    background-color: #818384;
+    /* color: black; */
+    margin:4px;
+}
