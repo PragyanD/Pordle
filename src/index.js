@@ -55,8 +55,10 @@ keys.forEach(key => {
   const keyboard = document.getElementById('key-container');
   const buttonElement = document.createElement('button');
   buttonElement.textContent = key;
+  
   buttonElement.setAttribute('id', key);
   buttonElement.addEventListener('click', () => handleClick(key));
+  buttonElement.className = "key";
   keyboard.append(buttonElement);
 });
 
@@ -168,14 +170,18 @@ function revealWord(guess){
   for(let i = 0; i < 5; i++){
     const box = document.getElementById(`box${row}${i}`);
     const letter = box.textContent;
+    const key = document.getElementById(letter.toUpperCase());
+    const includeSecret = state.secret.slice(i+1);
     setTimeout(() =>{
       if(letter == state.secret[i]){
         box.classList.add('right');
-      } else if (state.secret.includes(letter)){
+        key.classList.add('right');
+      } else if (includeSecret.includes(letter)){
         box.classList.add('wrong');
-      
+        key.classList.add('wrong');
       } else{
         box.classList.add('empty');
+        key.classList.add('empty');
       }
     },((i+1)*animation_duration/2));
     box.classList.add('animated');
