@@ -176,12 +176,15 @@ function revealWord(guess){
       if(letter == state.secret[i]){
         box.classList.add('right');
         key.classList.add('right');
-      } else if (includeSecret.includes(letter)){
+      } else if (state.secret.includes(letter)){
+        
         box.classList.add('wrong');
         key.classList.add('wrong');
+        
       } else{
         box.classList.add('empty');
         key.classList.add('empty');
+        guess.replace(letter,' ');
       }
     },((i+1)*animation_duration/2));
     box.classList.add('animated');
