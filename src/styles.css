@@ -1,6 +1,7 @@
 html,
 body{
     background: var(--default);
+    
 }
 :root{
     --default: #121213;
@@ -40,24 +41,28 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.4rem;
 }
-#key-container{
-   
+#key-container {
     width: 510px;
     display: flex;
     flex-wrap: wrap;
-    place-items: center;
-    justify-content: center;
-
 }
-#key-container button{
-    
-    width:43px;
-    height:58px;
+
+#key-container button {
+    width: 43px;
+    height: 58px;
     border-radius: 4px;
-    border:none;
+    border: none;
     background-color: #818384;
-    /* color: black; */
-    margin:4px;
+    margin: 4px;
+}
+
+#key-container button:nth-child(11) {
+    margin-left: 30px;
+}
+
+#key-container button:nth-child(20),
+#key-container button:nth-child(28) {
+    width: 68px;
 }
 #key-container button.empty{
     background: var(--empty)
